@@ -1,3 +1,5 @@
+const inquirer = require('inquirer');
+
 // array of questions for user
 const questions = [
     {
@@ -30,7 +32,12 @@ const questions = [
         name: 'Test',
         message: 'Write tests for your application.'
       },
-      
+      {
+        type: 'checkbox',
+        name: 'License',
+        message: 'What license are you using in this project? (Check one)',
+        choices: ['mit', 'apache-2.0', 'afl-3.0', 'artistic-2.0', 'wtfpl', 'gpl', 'mpl']
+      }, 
 ];
 
 // function to write README file
@@ -38,9 +45,12 @@ function writeToFile(fileName, data) {
 }
 
 // function to initialize program
-function init() {
-
+function init(questions) {
+    return inquirer.prompt(questions);
 }
 
 // function call to initialize program
-init();
+init(questions)
+.then(answers => {
+    console.log(answers);
+});
