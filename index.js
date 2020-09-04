@@ -1,4 +1,6 @@
 const inquirer = require('inquirer');
+const fillOutREADME = require('./utils/generateMarkdown.js');
+const writeFile = require('./utils/createFile.js');
 
 // array of questions for user
 const questions = [
@@ -36,7 +38,7 @@ const questions = [
         type: 'checkbox',
         name: 'License',
         message: 'What license are you using in this project? (Select one)',
-        choices: ['mit', 'apache-2.0', 'afl-3.0', 'artistic-2.0', 'wtfpl', 'gpl', 'mpl']
+        choices: ['mit', 'apache-2.0', 'bsl-1.0', 'unlicense', 'gpl-3.0', 'mpl-2.0']
       },
       {
         type: 'input',
@@ -62,5 +64,14 @@ function init(questions) {
 // function call to initialize program
 init(questions)
 .then(answers => {
-    console.log(answers);
+    return fillOutREADME(answers);
+})
+.then(READMEdata => {
+    return writeFile(READMEdata)
+})
+.then(writeFileResponse => {
+    console.log(writeFileResponse);
+})
+.catch(err => {
+  console.log(err);
 });

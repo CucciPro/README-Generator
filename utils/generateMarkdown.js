@@ -30,7 +30,7 @@ ${data.Usage}
 
 ## License
 
-This project is licensed under the ${data.License} license.
+This project is licensed under the [${data.License}] (https://choosealicense.com/licenses/${data.License}) license.
 
 
 ## Contributing
