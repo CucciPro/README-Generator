@@ -30,12 +30,12 @@ ${data.Usage}
 
 ## License
 
-This project is licensed under the [${data.License}] (https://choosealicense.com/licenses/${data.License}) license.
+This project is licensed under the [${data.License}](https://choosealicense.com/licenses/${data.License}) license.
 
 
 ## Contributing
 
-${data.Contributions} 
+${data.Contribution} 
 
 
 ## Tests
@@ -46,7 +46,7 @@ ${data.Test}
 
 ## Questions
 
-For any questions please reach out on [Github]( https://github.com/${data.Github}/) or directly to my [email](${data.Email})!
+For any questions please reach out on [Github](https://github.com/${data.Github}/) or directly to my [email](${data.Email})!
 
 `;
 }
